@@ -7,6 +7,8 @@ class check_mk::params {
   $repo_pass   = hiera('sp_repo_pass')
   $repo_path   = hiera('sp_repo_path')
 
+  $agent_plugin_dir = '/usr/lib/check_mk_agent/plugins'
+
   case $::operatingsystem {
     /^(Debian|Ubuntu)$/: {
       $installer   = '/usr/bin/dpkg'
