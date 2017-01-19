@@ -13,15 +13,13 @@ class check_mk::params {
     /^(Debian|Ubuntu)$/: {
       $installer   = '/usr/bin/dpkg'
       $package_agent = [
-        'check-mk-agent_1.2.6p12-1_all.deb',
-        'check-mk-agent-logwatch_1.2.6p12-1_all.deb'
+        'check-mk-agent_1.2.6p16-1_all.deb'
       ]
     }
     /^(Redhat|CentOS)$/: {
       $installer   = '/bin/rpm'
       $package_agent = [
-        'check_mk-agent-1.2.5i2p1-1.noarch.rpm',
-        'check_mk-agent-logwatch-1.2.5i2p1-1.noarch.rpm'
+        'check-mk-agent-1.2.6p16-1.noarch.rpm',
       ]
     }
     default: {
