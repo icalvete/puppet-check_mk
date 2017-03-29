@@ -1,11 +1,11 @@
 class check_mk::params {
 
-  $repo_scheme = hiera('sp_repo_scheme')
-  $repo_domain = hiera('sp_repo_domain')
-  $repo_port   = hiera('sp_repo_port')
-  $repo_user   = hiera('sp_repo_user')
-  $repo_pass   = hiera('sp_repo_pass')
-  $repo_path   = hiera('sp_repo_path')
+  $repo_scheme = hiera('sp_repo_scheme', 'http')
+  $repo_domain = hiera('sp_repo_domain', 'smarpurposes-repo.s3-website-eu-west-1.amazonaws.com')
+  $repo_port   = hiera('sp_repo_port', '')
+  $repo_user   = hiera('sp_repo_user', '')
+  $repo_pass   = hiera('sp_repo_pass', '')
+  $repo_path   = hiera('sp_repo_path', '')
 
   $agent_plugin_dir = '/usr/lib/check_mk_agent/plugins'
 
