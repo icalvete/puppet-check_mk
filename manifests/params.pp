@@ -11,16 +11,12 @@ class check_mk::params {
 
   case $::operatingsystem {
     /^(Debian|Ubuntu)$/: {
-      $installer   = '/usr/bin/dpkg'
-      $package_agent = [
-        'check-mk-agent_1.2.6p16-1_all.deb'
-      ]
+      $installer     = '/usr/bin/dpkg'
+      $package_agent = 'check-mk-agent_1.2.6p16-1_all.deb'
     }
     /^(Redhat|CentOS)$/: {
-      $installer   = '/bin/rpm'
-      $package_agent = [
-        'check-mk-agent-1.2.6p16-1.noarch.rpm',
-      ]
+      $installer     = '/bin/rpm'
+      $package_agent = 'check-mk-agent-1.2.6p16-1.noarch.rpm'
     }
     default: {
       fail ("${::operatingsystem} not supported.")

@@ -15,7 +15,7 @@ class check_mk::agent::install{
 
   exec {'check_mk_agent_install_package':
     cwd     => '/tmp/',
-    command => "${check_mk::params::installer} -i check-mk-agent*",
+    command => "${check_mk::params::installer} -i ${check_mk::agent::repo_resource_agent}",
     require => Wget::Fetch[$check_mk::agent::repo_resource_agent],
     unless  => '/usr/bin/test -d /etc/xinetd.d/check_mk'
   }
